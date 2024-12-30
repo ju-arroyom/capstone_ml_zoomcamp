@@ -14,3 +14,12 @@ Geographic Origin: Region
 Quality Metrics: Quality score, category, sugar content, acidity
 Physical Characteristics: Cluster weight, berry size
 Environmental Factors: Harvest date, sun exposure, soil moisture, rainfall
+
+
+pipenv install pandas==2.2.3 scikit-learn==1.6.0 flask gunicorn
+
+
+```
+docker build -t grape_quality_prediction .
+docker run -it --rm -p 8787:8787 grape_quality_prediction
+```
