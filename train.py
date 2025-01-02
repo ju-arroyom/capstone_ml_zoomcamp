@@ -114,8 +114,8 @@ def train_model():
    X_train, dv = transform_data(X_train)
    logger.info("Model training")
 
-   params = {"n_estimators":186,
-             "max_depth":11,
+   params = {"n_estimators":218,
+             "max_depth":21,
              "min_samples_leaf":4,
              "random_state":42, 
              "n_jobs":-1}
