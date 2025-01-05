@@ -20,6 +20,7 @@ In order to create a prediction, the chosen dataset contains 1,000 observation a
 - Physical Characteristics: Cluster weight, berry size
 - Environmental Factors: Harvest date, sun exposure, soil moisture, rainfall
 
+> [!IMPORTANT]
 To make the modeling aspect more challenging, the quality score feature was removed since it allowed for an almost perfect classification of the grapes.
 
 
