@@ -9,7 +9,7 @@ There are four categories of grape quality:
 - Medium 
 - Low
 
-In order to create a prediction, the chosen dataset (please refer to Dataset subsection) contains the following characteristics:
+In order to create a prediction, the chosen dataset contains 1,000 observation and 13 features covering the following characteristics:
 
 - Identification: Variety
 - Geographic Origin: Region
@@ -76,8 +76,21 @@ docker build -t grape_quality_prediction .
 docker run -it --rm -p 8787:8787 grape_quality_prediction
 ```
 
+# EDA
+
+All the exploratory analysis can be found under notebook.ipynb.
+
+In there, the original dataset was split into train/validation/test to:
+
+- Analyze relationships between numerical and categorical features with target variable.
+
+- Model selection and hyperparameter tuning
+
+- Find the best algorithm and hyperparameters for our problem.
 
 # Model Training
+
+
 To train the final model, please run python train.py inside the conda environment.
 
 This script will create the artifacts directory and store the model.bin file as well as df_test.csv.
