@@ -39,8 +39,6 @@ To make the modeling aspect more challenging, the quality score feature was remo
 └── train.py
 ```
 
-# Project Structure
-
 ## Clone the project
 
 ```
