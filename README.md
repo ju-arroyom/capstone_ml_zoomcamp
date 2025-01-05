@@ -1,6 +1,6 @@
 # Capstone 1: ML Zoomcamp
 
-![grapes](img/grapes_quality_diagram.png)
+<img src="img/grapes_quality_diagram.png" width="300" height="400">
 
 
 The goal of this project is to predict grape quality based on physical and environmental characteristics.
