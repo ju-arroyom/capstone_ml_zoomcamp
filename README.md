@@ -51,7 +51,7 @@ unzip grape-quality.zip
 ## Clone the project
 
 ```
-
+git clone https://github.com/ju-arroyom/capstone_ml_zoomcamp.git
 ```
 
 ## Conda Environment
