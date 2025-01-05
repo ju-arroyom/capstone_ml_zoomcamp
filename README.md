@@ -1,14 +1,6 @@
 # Capstone 1: ML Zoomcamp
 
-The goal of this project is to predict grape quality based on the following characteristics:
-
-Identification: Variety
-Geographic Origin: Region
-Quality Metrics: category, sugar content, acidity
-Physical Characteristics: Cluster weight, berry size
-Environmental Factors: Harvest date, sun exposure, soil moisture, rainfall
-
-To make the modeling aspect more challenging, the quality score feature was removed since it allowed for an almost perfect classification of the grapes.
+The goal of this project is to predict grape quality based on physical and environmental characteristics.
 
 There are four categories of grape quality:
 
@@ -17,15 +9,16 @@ There are four categories of grape quality:
 - Medium 
 - Low
 
-# Dataset 
+In order to create a prediction, the chosen dataset (please refer to Dataset subsection) contains the following characteristics:
 
-The dataset can be downloaded from kaggle using the following commands:
+- Identification: Variety
+- Geographic Origin: Region
+- Quality Metrics: Sugar content, acidity
+- Physical Characteristics: Cluster weight, berry size
+- Environmental Factors: Harvest date, sun exposure, soil moisture, rainfall
 
-```
-curl -L -o $(pwd)/grape-quality.zip  https://www.kaggle.com/api/v1/datasets/download/mrmars1010/grape-quality
+To make the modeling aspect more challenging, the quality score feature was removed since it allowed for an almost perfect classification of the grapes.
 
-unzip grape-quality.zip 
-```
 
 # Project Structure (TBD)
 
@@ -52,6 +45,16 @@ unzip grape-quality.zip
 
 ```
 git clone https://github.com/ju-arroyom/capstone_ml_zoomcamp.git
+```
+
+## Dataset 
+
+In the data subfolder, download the dataset from kaggle using the following commands:
+
+```
+curl -L -o $(pwd)/grape-quality.zip  https://www.kaggle.com/api/v1/datasets/download/mrmars1010/grape-quality
+
+unzip grape-quality.zip 
 ```
 
 ## Conda Environment
