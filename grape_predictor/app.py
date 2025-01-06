@@ -34,7 +34,6 @@ def predict_grape_quality(dv, model, grape_info):
     y_pred = model.predict(X)
     return y_pred
 
-dv, model = load_artifacts("./artifacts/model.bin")
 
 # Home route with form input
 @app.route('/')
@@ -44,6 +43,8 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def grapify():
+    # Load model artifacts
+    dv, model = load_artifacts("./artifacts/model.bin")
     if request.is_json:
         data_dict = request.get_json()
         prediction = predict_grape_quality(dv, model, data_dict)[0]
