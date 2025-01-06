@@ -26,7 +26,7 @@ In order to create a prediction, the chosen dataset contains 1,000 observation a
 To make the modeling aspect more challenging, the quality score feature was removed since it allowed for an almost perfect classification of the grapes.
 
 
-# Project Structure (TBD)
+# Project Structure
 
 ```
 ├── Dockerfile
@@ -40,17 +40,19 @@ To make the modeling aspect more challenging, the quality score feature was remo
 │   └── GRAPE_QUALITY.csv
 ├── grape_predictor
 │   ├── app.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── styles.css
+│   │   └── images
+│   │       └── grapes_quality_diagram.png
 │   └── templates
 │       ├── base.html
 │       ├── form.html
-│       └── static
-│           └── css
-│               └── styles.css
+│       └── result.html
 ├── img
 │   └── grapes_quality_diagram.png
 ├── notebooks
 │   └── notebook.ipynb
-├── predict.py
 ├── score_results.py
 └── train.py
 ```
