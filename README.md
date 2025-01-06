@@ -26,7 +26,7 @@ In order to create a prediction, the chosen dataset contains 1,000 observation a
 To make the modeling aspect more challenging, the quality score feature was removed since it allowed for an almost perfect classification of the grapes.
 
 
-# Project Structure (TBD)
+# Project Structure
 
 ```
 ├── Dockerfile
@@ -38,9 +38,21 @@ To make the modeling aspect more challenging, the quality score feature was remo
 │   └── model.bin
 ├── data
 │   └── GRAPE_QUALITY.csv
+├── grape_predictor
+│   ├── app.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── styles.css
+│   │   └── images
+│   │       └── grapes_quality_diagram.png
+│   └── templates
+│       ├── base.html
+│       ├── form.html
+│       └── result.html
+├── img
+│   └── grapes_quality_diagram.png
 ├── notebooks
 │   └── notebook.ipynb
-├── predict.py
 ├── score_results.py
 └── train.py
 ```
@@ -78,8 +90,8 @@ pipenv install pandas==2.2.3 scikit-learn==1.6.0 flask gunicorn
 ## Docker
 
 ```
-docker build -t grape_quality_prediction .
-docker run -it --rm -p 8787:8787 grape_quality_prediction
+docker build -t grape_quality_prediction:v1 .
+docker run -it --rm -p 8787:8787 grape_quality_prediction:v1
 ```
 
 # EDA
@@ -103,8 +115,21 @@ This script will create the artifacts directory and store the model.bin file as 
 
 Both files are required to run the scoring script.
 
-# Scoring test results
+# Predictions
 
-From conda environment run the following command:
+## Interactive Prediction Video
 
-python score_results.py
+
+https://github.com/user-attachments/assets/8f66a44c-8adf-4be8-84a9-6f1340a89051
+
+
+## Manual Scoring
+
+From conda environment run `python score_results.py`
+
+### Sample Video Manual Scoring
+
+https://github.com/user-attachments/assets/be71361e-1225-481f-a28f-74abaff062c3
+
+
+
