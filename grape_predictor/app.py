@@ -1,5 +1,5 @@
 import pickle
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 
 app = Flask(__name__)
 
@@ -41,7 +41,7 @@ def home():
     return render_template('form.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET', 'POST'])
 def grapify():
     # Load model artifacts
     dv, model = load_artifacts("./artifacts/model.bin")
@@ -49,7 +49,7 @@ def grapify():
         data_dict = request.get_json()
         prediction = predict_grape_quality(dv, model, data_dict)[0]
         result = {'predicted_class': prediction}
-        return jsonify(result), 200
+        return jsonify(result)
     else:
         # Extract data from the form
         sugar_content_brix = float(request.form['sugar_content_brix'])
@@ -80,8 +80,13 @@ def grapify():
                 }
         prediction = predict_grape_quality(dv, model, data_dict)[0]
 
-        return render_template('form.html', prediction=prediction), 200
+        return redirect(url_for('result', category=prediction))
+    
+@app.route('/result')
+def result():
+    # Get predicted category from URL query string
+    category = request.args.get('category', 'Unknown')
+    return render_template('result.html', category=category)
 
 if __name__ == '__main__':
-    print(app.instance_path)
     app.run(debug=True, host='0.0.0.0', port=8787)
