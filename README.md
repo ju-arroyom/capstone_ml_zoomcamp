@@ -120,6 +120,8 @@ Both files are required to run the scoring script.
 ## Interactive Prediction Video
 
 
+https://github.com/user-attachments/assets/8f66a44c-8adf-4be8-84a9-6f1340a89051
+
 
 ## Manual Scoring
 
