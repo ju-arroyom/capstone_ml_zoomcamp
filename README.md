@@ -78,7 +78,7 @@ pipenv install pandas==2.2.3 scikit-learn==1.6.0 flask gunicorn
 ## Docker
 
 ```
-docker build -t grape_quality_prediction .
+docker build -t grape_quality_prediction:v1 .
 docker run -it --rm -p 8787:8787 grape_quality_prediction
 ```
 

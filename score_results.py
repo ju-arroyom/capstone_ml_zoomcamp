@@ -24,15 +24,15 @@ def sample_test_data(n):
     return y_test, X_test
 
 
-def score_test_data(house_info):
+def score_test_data(grape_info):
     """
     Score sample test data
 
     Args:
-        house_info (dict): Dictionary containing house features
+        grape_info (dict): Dictionary containing grape features
     """
     url = 'http://localhost:8787/predict'
-    response = requests.post(url, json=house_info) ## post the grape information in json format
+    response = requests.post(url, json=grape_info) ## post the grape information in json format
     result = response.json() ## get the server response
     logger.info(result)
 

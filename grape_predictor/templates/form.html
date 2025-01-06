@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Enter Grape Characteristics</h2>
+    <form method="POST" action="/predict">
+        <div class="form-group">
+            <label for="sugar_content_brix">Sugar Content Brix (1 gram of sucrose in 100 grams of solution):</label><br>
+            <input type="number" step="0.01" name="sugar_content_brix" id="sugar_content_brix" min="10" max="29.99" required><br><br>
+        </div>
+        <label for="acidity_ph">Acidity (PH):</label><br>
+        <input type="number" step="0.1" name="acidity_ph" id="acidity_ph" min="2.8" max="4.5" required><br><br>
+
+        <label for="cluster_weight_g">Grape Cluster Weight (g):</label><br>
+        <input type="number" step="10" name="cluster_weight_g" id="cluster_weight_g" min="50" max="350" required><br><br>
+
+        <label for="berry_size_mm">Berry Size (mm):</label><br>
+        <input type="number" step="0.01" name="berry_size_mm" id="berry_size_mm" min="10" max="25" required><br><br>
+
+        <label for="sun_exposure_hours">Sun Exposure (hours):</label><br>
+        <input type="number" step="1" name="sun_exposure_hours" id="sun_exposure_hours" min="6" max="12" required><br><br>
+
+        <label for="soil_moisture_percent">Soil Moisture (%):</label><br>
+        <input type="number" step="0.1" name="soil_moisture_percent" id="soil_moisture_percent" min="30" max="70" required><br><br>
+
+        <label for="rainfall_mm">Rainfall (mm):</label><br>
+        <input type="number" step="0.1" name="rainfall_mm" id="rainfall_mm" min="200" max="800" required><br><br>
+
+        <label for="harvest_day">Harvest Day:</label><br>
+        <input type="number" step="1" name="harvest_day" id="harvest_day" min="1" max="30" required><br><br>
+
+        <label for="harvest_month">Harvest Month:</label><br>
+        <input type="number" step="1" name="harvest_month" id="harvest_month" min="1" max="12" required><br><br>
+
+        <label for="variety">Variety:</label>
+                <select id="variety" name="variety">
+                    <option value="Riesling">Riesling</option>
+                    <option value="Pinot Noir">Pinot Noir</option>
+                    <option value="Sauvignon Blanc">Sauvignon Blanc</option>
+                    <option value="Merlot">Merlot</option>
+                    <option value="Zinfandel">Zinfandel</option>
+                    <option value="Chardonnay">Chardonnay</option>
+                    <option value="Syrah">Syrah</option>
+                    <option value="Cabernet Sauvignon">Cabernet Sauvignon</option>
+                </select><br><br>
+
+        <label for="region">Region:</label>
+                <select id="region" name="region">
+                    <option value="Barossa Valley">Barossa Valley</option>
+                    <option value="Loire Valley">Loire Valley</option>
+                    <option value="Napa Valley">Napa Valley</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Tuscany">Tuscany</option>
+                    <option value="Rioja">Rioja</option>
+                    <option value="Bordeaux">Bordeaux</option>
+                    <option value="Sonoma">Sonoma</option>
+                </select><br><br>
+    <button type="submit">Predict</button><br><br>
+    </form>
+    <h2>Prediction Result</h2>
+    <p>The predicted grape category is: <strong>{{ prediction }}</strong></p>
+    <a href="/">Predict Another</a>
+{% endblock %}

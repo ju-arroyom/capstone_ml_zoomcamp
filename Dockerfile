@@ -9,17 +9,16 @@ WORKDIR /app
 # Copy the Pip files into our working directory 
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
-# Copy artifacts
-COPY artifacts/model.bin /app/artifacts/
-
-# Copy predict file
-COPY ["predict.py", "./"]
-
 # Install the pipenv dependencies for the project and deploy them.
 RUN pipenv install --deploy --system
+
+# Copy artifacts & folder
+COPY artifacts/model.bin /app/artifacts/
+
+COPY grape_predictor/ /app/grape_predictor/
 
 # Expose port
 EXPOSE 8787
 
-# Create entrypoint and bind port 87:87
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8787", "predict:app"]
+# Create entrypoint and bind port 8787
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:8787", "grape_predictor.app:app"]
