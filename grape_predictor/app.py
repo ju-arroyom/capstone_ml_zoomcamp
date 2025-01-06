@@ -84,4 +84,4 @@ def grapify():
 
 if __name__ == '__main__':
     print(app.instance_path)
-    app.run(debug=True, host='0.0.0.0', port=9696)
+    app.run(debug=True, host='0.0.0.0', port=8787)
