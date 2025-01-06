@@ -117,13 +117,15 @@ Both files are required to run the scoring script.
 
 # Predictions
 
+## Interactive Prediction Video
+
 
 
 ## Manual Scoring
 
 From conda environment run `python score_results.py`
 
-### Sample Video
+### Sample Video Manual Scoring
 
 https://github.com/user-attachments/assets/be71361e-1225-481f-a28f-74abaff062c3
 
