@@ -38,6 +38,16 @@ To make the modeling aspect more challenging, the quality score feature was remo
 │   └── model.bin
 ├── data
 │   └── GRAPE_QUALITY.csv
+├── grape_predictor
+│   ├── app.py
+│   └── templates
+│       ├── base.html
+│       ├── form.html
+│       └── static
+│           └── css
+│               └── styles.css
+├── img
+│   └── grapes_quality_diagram.png
 ├── notebooks
 │   └── notebook.ipynb
 ├── predict.py
