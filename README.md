@@ -113,8 +113,13 @@ This script will create the artifacts directory and store the model.bin file as 
 
 Both files are required to run the scoring script.
 
-# Scoring test results
+# Predictions
 
-From conda environment run the following command:
 
-python score_results.py
+
+## Manual Scoring
+
+From conda environment run `python score_results.py`
+
+## Sample Video
+
